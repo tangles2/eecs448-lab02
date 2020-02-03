@@ -1,6 +1,6 @@
 /**
-*	@author
-*	@date
+*	@author Thomas Angles
+*	@date	02/03/2020
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
@@ -25,13 +25,13 @@ bool LinkedList<T>::isEmpty() const
 {
 	return(m_size == 0);
 }
-
+// No variable names changed
 template <typename T>
 int LinkedList<T>::size() const
 {
 	return(m_size);
 }
-
+// No variable names changed
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
@@ -96,6 +96,11 @@ void LinkedList<T>::addFront(T value)
 	m_size++;
 }
 
+//Changed the method definition from the given structure
+// No longer using bool isRemoved and used newly declared nodes tmp and tail
+// added checks for when the size is 0 or 1
+// tmp is the looping node that is redeclared into tail when its traversed to the end of the linked LinkedList
+// then after that tmp is deleted and tail next pointer is set to null
 template <typename T>
 bool LinkedList<T>::removeBack()
 {
